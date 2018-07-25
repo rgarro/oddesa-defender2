@@ -1,13 +1,15 @@
 {
-  "name": "new",
+  "name": "oddessa-defender2",
   "version": "1.0.0",
-  "description": "",
+  "description": "a 3D game ...",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "orbit-controls-es6": "1.0.12",
     "react": "16.3.2",
     "react-dom": "16.3.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "three": "0.94.0"
   },
   "devDependencies": {},
   "scripts": {
