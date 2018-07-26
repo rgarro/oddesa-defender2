@@ -42,7 +42,15 @@ class Game extends Component {
     this.Controls.enabled = true;
     this.Controls.maxDistance = 1500;
     this.Controls.minDistance = 0;
+    /*
+const geometry = new THREE.SphereGeometry();
+    const material = new THREE.MeshNormalMaterial({
+      color: 0xff0000
+    });
 
+    const globe = new THREE.Mesh(geometry, material);
+    scene.add(globe);
+ */
     const animate = () => {
       requestAnimationFrame(animate);
       const zoom = this.Controls.object.position.distanceTo(
