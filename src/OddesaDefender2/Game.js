@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as THREE from "three";
 import OrbitControls from "orbit-controls-es6";
+import Lockheed from "./Lib/Lockheed"; //Ac130h
 
 class Game extends Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class Game extends Component {
     this.Renderer;
     this.Camera;
     this.Controls;
+    this.Ac130h = new Lockheed();
+    console.log(this.Ac130h);
   }
 
   render() {
