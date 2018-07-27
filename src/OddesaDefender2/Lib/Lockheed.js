@@ -14,9 +14,11 @@
  *        :::: Cloud Development is "Black" Magic ... ::::
  */
 import * as THREE from "three";
+import Model from "./Model";
 
-class Lockheed {
+class Lockheed extends Model {
   constructor() {
+    super();
     this.meshName = "Spooky";
     this.modelPath = "../Models/AC130/Models/AC130.obj";
     this.vehicleMesh = null;
