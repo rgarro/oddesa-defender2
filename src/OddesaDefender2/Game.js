@@ -67,6 +67,15 @@ const geometry = new THREE.SphereGeometry();
     animate();
   }
 
+  postInit() {
+    this.loadPlane();
+  }
+
+  loadPlane() {
+    this.Ac130h.setParent(this);
+    this.Ac130h.loadModel(this.Ac130h.modelPath);
+  }
+
   shouldComponentUpdate() {
     return false;
   }
