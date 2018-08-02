@@ -33,6 +33,12 @@ class Model {
     }
   }
 
+  preRender() {}
+
+  onRender() {}
+
+  postRender() {}
+
   postLoaded() {}
 
   setParent(game) {
