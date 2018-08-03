@@ -1,4 +1,5 @@
 import * as THREE from "three";
+var OBJLoader = require("three-obj-loader");
 
 class Model {
   constructor() {
@@ -10,10 +11,11 @@ class Model {
   loadModel(modelUrl) {
     if (this.game_is_set) {
       //var loader = new THREE.JSONLoader();
+      /*OBJLoader(THREE);
       var loader = new THREE.OBJLoader();
       loader.load(modelUrl, function(obj) {
         console.log(typeof obj);
-      });
+      });*/
       /*loader.load(
         modelUrl,
         function(model, materials) {

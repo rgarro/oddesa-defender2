@@ -11,6 +11,7 @@ class Game extends Component {
     this.Camera;
     this.Controls;
     this.Ac130h = new Lockheed();
+    this.animate;
     console.log(this.Ac130h);
   }
 
@@ -27,6 +28,23 @@ class Game extends Component {
   }
 
   componentDidMount() {
+    this.init();
+    /*
+const geometry = new THREE.SphereGeometry();
+    const material = new THREE.MeshNormalMaterial({
+      color: 0xff0000
+    });
+
+    const globe = new THREE.Mesh(geometry, material);
+    scene.add(globe);
+ */
+    this.onRenderer();
+    this.container.appendChild(this.Renderer.domElement);
+
+    this.animate();
+  }
+
+  init() {
     this.Scene = new THREE.Scene();
     this.Scene.background = new THREE.Color(0x222222);
 
@@ -45,26 +63,23 @@ class Game extends Component {
     this.Controls.enabled = true;
     this.Controls.maxDistance = 1500;
     this.Controls.minDistance = 0;
-    /*
-const geometry = new THREE.SphereGeometry();
-    const material = new THREE.MeshNormalMaterial({
-      color: 0xff0000
-    });
+    this.postInit();
+  }
 
-    const globe = new THREE.Mesh(geometry, material);
-    scene.add(globe);
- */
-    const animate = () => {
-      requestAnimationFrame(animate);
+  postInit() {}
+
+  onPreRender() {}
+
+  onRenderer() {
+    this.onPreRender();
+    this.animate = () => {
+      requestAnimationFrame(this.animate);
       const zoom = this.Controls.object.position.distanceTo(
         this.Controls.target
       );
 
       this.Renderer.render(this.Scene, this.Camera);
     };
-    this.container.appendChild(this.Renderer.domElement);
-
-    animate();
   }
 
   postInit() {
@@ -75,6 +90,8 @@ const geometry = new THREE.SphereGeometry();
     this.Ac130h.setParent(this);
     this.Ac130h.loadModel(this.Ac130h.modelPath);
   }
+
+  floorAndSky() {}
 
   shouldComponentUpdate() {
     return false;

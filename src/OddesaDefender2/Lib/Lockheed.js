@@ -25,6 +25,8 @@ class Lockheed extends Model {
     this.scale = 13;
     this.group = new THREE.Object3D();
   }
+
+  init() {}
 }
 
 export default Lockheed;
