@@ -12,7 +12,6 @@ class Game extends Component {
     this.Controls;
     this.Ac130h = new Lockheed();
     this.animate;
-    console.log(this.Ac130h);
   }
 
   render() {
@@ -66,17 +65,15 @@ const geometry = new THREE.SphereGeometry();
     this.postInit();
   }
 
-  postInit() {}
-
   onPreRender() {}
 
   onRenderer() {
     this.onPreRender();
     this.animate = () => {
       requestAnimationFrame(this.animate);
-      const zoom = this.Controls.object.position.distanceTo(
+      /*const zoom = this.Controls.object.position.distanceTo(
         this.Controls.target
-      );
+      );*/
 
       this.Renderer.render(this.Scene, this.Camera);
     };
