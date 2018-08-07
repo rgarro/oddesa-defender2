@@ -12,6 +12,7 @@ class Game extends Component {
     this.Controls;
     this.Ac130h = new Lockheed();
     this.animate;
+    this.enable_shadows = true;
   }
 
   render() {
@@ -28,19 +29,17 @@ class Game extends Component {
 
   componentDidMount() {
     this.init();
-    /*
-const geometry = new THREE.SphereGeometry();
-    const material = new THREE.MeshNormalMaterial({
-      color: 0xff0000
-    });
-
-    const globe = new THREE.Mesh(geometry, material);
-    scene.add(globe);
- */
-    this.onRenderer();
     this.container.appendChild(this.Renderer.domElement);
-
+    this.onRenderer();
     this.animate();
+    this.postInit();
+  }
+
+  testSomethingIsOnTheScene(){
+    const geometry = new THREE.SphereGeometry();
+    const material = new THREE.MeshNormalMaterial({color: 0xff0000});
+    const globe = new THREE.Mesh(geometry, material);
+    this.Scene.add(globe);
   }
 
   init() {
@@ -49,6 +48,11 @@ const geometry = new THREE.SphereGeometry();
 
     this.Renderer = new THREE.WebGLRenderer({ antialias: true });
     this.Renderer.setSize(window.innerWidth, window.innerHeight);
+    this.Renderer.shadowMap.enabled = this.enable_shadows;
+    if(this.Renderer.shadowMap.enabled){
+      //this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      this.Renderer.shadowMap.type = THREE.BasicShadowMap;
+    }
 
     this.Camera = new THREE.PerspectiveCamera(
       50,
@@ -62,7 +66,7 @@ const geometry = new THREE.SphereGeometry();
     this.Controls.enabled = true;
     this.Controls.maxDistance = 1500;
     this.Controls.minDistance = 0;
-    this.postInit();
+
   }
 
   onPreRender() {}
@@ -80,7 +84,8 @@ const geometry = new THREE.SphereGeometry();
   }
 
   postInit() {
-    this.loadPlane();
+    this.testSomethingIsOnTheScene();
+    //this.loadPlane();//tomorrow test here ...
   }
 
   loadPlane() {
