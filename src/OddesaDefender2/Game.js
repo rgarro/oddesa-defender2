@@ -6,12 +6,12 @@ import Lockheed from "./Lib/Lockheed"; //Ac130h
 class Game extends Component {
   constructor(props) {
     super(props);
-    this.Scene;
-    this.Renderer;
-    this.Camera;
-    this.Controls;
+    this.Scene = {};
+    this.Renderer = {};
+    this.Camera = {};
+    this.Controls = {};
     this.Ac130h = new Lockheed();
-    this.animate;
+    this.animate = {};
     this.enable_shadows = true;
   }
 
@@ -78,17 +78,17 @@ class Game extends Component {
       /*const zoom = this.Controls.object.position.distanceTo(
         this.Controls.target
       );*/
-
       this.Renderer.render(this.Scene, this.Camera);
     };
   }
 
   postInit() {
     this.testSomethingIsOnTheScene();
-    //this.loadPlane();//tomorrow test here ...
+    this.loadPlane();
   }
 
   loadPlane() {
+console.log("1 - started loading ...");
     this.Ac130h.setParent(this);
     this.Ac130h.loadModel(this.Ac130h.modelPath);
   }
