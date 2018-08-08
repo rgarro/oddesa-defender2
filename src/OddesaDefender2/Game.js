@@ -83,12 +83,12 @@ class Game extends Component {
   }
 
   postInit() {
-    this.testSomethingIsOnTheScene();
+    //this.testSomethingIsOnTheScene();
     this.loadPlane();
   }
 
   loadPlane() {
-console.log("1 - started loading ...");
+//console.log("1 - started loading ...");
     this.Ac130h.setParent(this);
     this.Ac130h.loadModel(this.Ac130h.modelPath);
   }

@@ -13,8 +13,8 @@ class Model {
     if (this.game_is_set) {
       var loader = new FBXLoader();
       loader.load(modelUrl, function (object3d) {
-console.log(this.vehicleColor);
-        //this.Game.Scene.add(object3d);
+console.log(typeof object3d);
+        this.Game.Scene.add(object3d);
       }.bind(this));
     } else {
       throw new Error("Needs a Game parent object");
