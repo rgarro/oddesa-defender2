@@ -101,6 +101,17 @@ class Game extends Component {
        //ambientLight.shadowCameraVisible = true;
      }
      this.Scene.add(ambientLight);
+     var light = new THREE.PointLight(0xffffff);
+     light.position.set(0,250,0);
+  /*if(this.enable_shadows){
+    light.castShadow = true;
+    light.shadow.camera.visible = true;
+    light.shadow.camera.right     =  5;
+    light.shadow.camera.left     = -5;
+    light.shadow.camera.top      =  5;
+    light.shadow.camera.bottom   = -5;
+  }*/
+    this.Scene.add(light);
   }
 
   floorAndSky() {}
