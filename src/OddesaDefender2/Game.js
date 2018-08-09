@@ -66,7 +66,6 @@ class Game extends Component {
     this.Controls.enabled = true;
     this.Controls.maxDistance = 1500;
     this.Controls.minDistance = 0;
-
   }
 
   onPreRender() {}
@@ -85,12 +84,23 @@ class Game extends Component {
   postInit() {
     //this.testSomethingIsOnTheScene();
     this.loadPlane();
+    this.setLights();
   }
 
   loadPlane() {
-//console.log("1 - started loading ...");
     this.Ac130h.setParent(this);
     this.Ac130h.loadModel(this.Ac130h.modelPath);
+  }
+
+//masaya noon sun ....
+  setLights(){
+     var ambientLight = new THREE.AmbientLight(0xF47a42);
+     if(this.enable_shadows){
+       //ambientLight.castShadow = true;
+       //this.scene.add(new THREE.CameraHelper( ambientLight.shadow.camera ));
+       //ambientLight.shadowCameraVisible = true;
+     }
+     this.Scene.add(ambientLight);
   }
 
   floorAndSky() {}
