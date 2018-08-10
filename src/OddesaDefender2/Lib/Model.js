@@ -9,6 +9,8 @@ class Model {
     this.vehicleObject = null;
     this.vehicleGeometry = null;
     this.vehicleColor = 0x0FFA65;
+    this.vehicleTexture = null;
+    this.vehicleTexture = null;
   }
 
   loadModel(modelUrl) {
@@ -16,11 +18,13 @@ class Model {
       var loader = new FBXLoader();
       loader.load(modelUrl, function (object3d){
         this.vehicleObject = object3d;
-        //this.vehicleMesh = this.vehicleObject.children[0];
+        var texture = new THREE.TextureLoader().load(this.vehicleTexture);
+        var material = new THREE.MeshBasicMaterial({map:texture});
+
         this.vehicleGeometry = (this.vehicleObject.children[0]).geometry;
-        var material = new THREE.MeshPhongMaterial();
+        //var material = new THREE.MeshPhongMaterial();
         //var material = new THREE.MeshBasicMaterial();
-        material.color.set(this.vehicleColor);
+        //material.color.set(this.vehicleColor);
        this.vehicleMesh = new THREE.Mesh(this.vehicleGeometry,material);
        this.vehicleMesh.name = this.vehicleMeshName;
        this.Game.Scene.add(this.vehicleMesh);

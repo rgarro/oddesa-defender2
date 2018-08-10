@@ -21,6 +21,7 @@ class Lockheed extends Model {
     super();
     this.meshName = "Spooky";
     this.modelPath = "/Models/ac130.fbx";
+    this.vehicleTexture = "/Models/MainBody.png";
     //this.modelPath = "/Models/tupolev.fbx";
     //this.modelPath = "/Models/blackhawk.fbx";
     //this.modelPath = "/Models/sikorsky.fbx";
