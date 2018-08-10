@@ -96,6 +96,7 @@ class Game extends Component {
   loadPlane() {
     this.Ac130h.setParent(this);
     this.Ac130h.loadModel(this.Ac130h.modelPath);
+    this.Ac130h.init();
   }
 
 //masaya noon sun ....

@@ -6,19 +6,35 @@ class Model {
     this.Game={};
     this.game_is_set = false;
     this.vehicleMesh = null;
+    this.vehicleObject = null;
+    this.vehicleGeometry = null;
     this.vehicleColor = 0x0FFA65;
   }
 
   loadModel(modelUrl) {
     if (this.game_is_set) {
       var loader = new FBXLoader();
-      loader.load(modelUrl, function (object3d) {
-console.log(typeof object3d);
-        this.Game.Scene.add(object3d);
+      loader.load(modelUrl, function (object3d){
+        this.vehicleObject = object3d;
+        //this.vehicleMesh = this.vehicleObject.children[0];
+        this.vehicleGeometry = (this.vehicleObject.children[0]).geometry;
+        var material = new THREE.MeshPhongMaterial();
+        //var material = new THREE.MeshBasicMaterial();
+        material.color.set(this.vehicleColor);
+       this.vehicleMesh = new THREE.Mesh(this.vehicleGeometry,material);
+       this.vehicleMesh.name = this.vehicleMeshName;
+       this.Game.Scene.add(this.vehicleMesh);
+        //this.vehicleObject.castShadow = true;
+        //this.Game.Scene.add(this.vehicleObject);
+        console.log(this.vehicleMesh.position);
       }.bind(this));
     } else {
       throw new Error("Needs a Game parent object");
     }
+  }
+
+  init(){
+
   }
 
   preRender() {}
