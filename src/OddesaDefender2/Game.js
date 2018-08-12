@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import * as THREE from "three";
-import OrbitControls from "orbit-controls-es6";
+
 import Lockheed from "./Lib/Lockheed"; //Ac130h
+
+const OrbitControls = require('three-orbitcontrols');
 
 class Game extends Component {
   constructor(props) {
@@ -68,6 +70,7 @@ class Game extends Component {
     this.Camera.position.z = 15;
 
     this.Controls = new OrbitControls(this.Camera, this.Renderer.domElement);
+    //this.Controls = new THREE.OrbitControls( this.Camera, this.Renderer.domElement );
     this.Controls.enabled = true;
     this.Controls.maxDistance = 1500;
     this.Controls.minDistance = 0;
