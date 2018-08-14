@@ -33,6 +33,10 @@ class Lockheed extends Model {
     this.group = new THREE.Object3D();
   }
 
+  postLoaded(){
+    this.vehicleMesh.rotation.y = 90;
+  }
+
 }
 
 export default Lockheed;

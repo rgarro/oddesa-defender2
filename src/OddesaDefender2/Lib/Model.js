@@ -31,6 +31,7 @@ class Model {
         //this.vehicleObject.castShadow = true;
         //this.Game.Scene.add(this.vehicleObject);
         console.log(this.vehicleMesh.position);
+        this.postLoaded();
       }.bind(this));
     } else {
       throw new Error("Needs a Game parent object");
