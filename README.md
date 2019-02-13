@@ -1,7 +1,6 @@
 # Oddesa Deffender II
 
-Jonas Savimbi toma un veneno que envenena la muerte ...
-El Black me dio un sobre con dolares, quiere que haga magia negra..
+who disappeared into the volcanoes of Mexico leaving behind nothing but the shadow of dungarees ..
 
 [![We were Goodfellas!](https://raw.githubusercontent.com/rgarro/oddesa-defender2/master/elBlack.PNG)]
 
