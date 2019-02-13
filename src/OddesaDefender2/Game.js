@@ -18,7 +18,7 @@ class Game extends Component {
     this.rotationSpeed = 0.001;
     this.ambientLightColor={};
     this.clearColor = 0xa3e1ff;
-    this.floorTextureUrl = '/Textures/floorb.png';
+    this.floorTextureUrl = '/Textures/floorc.png';
     this.floorTexture = null;
   }
 
