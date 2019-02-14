@@ -51,7 +51,7 @@ class Game extends Component {
 
   init() {
     this.Scene = new THREE.Scene();
-    this.Scene.background = new THREE.Color(0x222222);
+    this.Scene.background = new THREE.Color(0x402322);
 
     this.Renderer = new THREE.WebGLRenderer({ antialias: true });
     this.Renderer.setSize(window.innerWidth, window.innerHeight);
@@ -67,7 +67,8 @@ class Game extends Component {
       0.1,
       1000
     );
-    this.Camera.position.z = 15;
+    this.Camera.position.z = 50;
+    this.Camera.position.y = 50;
 
     this.Controls = new OrbitControls(this.Camera, this.Renderer.domElement);
     //this.Controls = new THREE.OrbitControls( this.Camera, this.Renderer.domElement );
@@ -76,7 +77,9 @@ class Game extends Component {
     this.Controls.minDistance = 0;
   }
 
-  onPreRender() {}
+  onPreRender() {
+    console.log("asdfffffff");
+  }
 
   onRenderer() {
     this.onPreRender();

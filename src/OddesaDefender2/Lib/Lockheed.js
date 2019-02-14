@@ -30,11 +30,20 @@ class Lockheed extends Model {
     this.vehicleMesh = null;
     this.vehicleColor = 0x0FFA65;
     this.scale = 13;
+    this.cruiseSpeed = 10;//Pixels Per Render time
     this.group = new THREE.Object3D();
   }
 
   postLoaded(){
     this.vehicleMesh.rotation.y = 90;
+  }
+
+  moveForward(){
+    //this.vehicleMesh.position.y += this.cruiseSpeed;
+  }
+
+  onRender() {
+    this.moveForward();
   }
 
 }
