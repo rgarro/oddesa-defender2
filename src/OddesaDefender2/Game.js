@@ -6,13 +6,13 @@ import Lockheed from "./Lib/Lockheed"; //Ac130h
 class Game extends Component {
   constructor(props) {
     super(props);
-    this.Scene;
-    this.Renderer;
-    this.Camera;
-    this.Controls;
+    this.Scene = {};
+    this.Renderer = {};
+    this.Camera = {};
+    this.Controls = {};
     this.Ac130h = new Lockheed();
-    this.animate;
-    console.log(this.Ac130h);
+    this.animate = {};
+    //console.log(this.Ac130h);
   }
 
   render() {
@@ -66,7 +66,7 @@ const geometry = new THREE.SphereGeometry();
     this.postInit();
   }
 
-  postInit() {}
+  //postInit() {}
 
   onPreRender() {}
 

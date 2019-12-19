@@ -24,6 +24,7 @@ class Lockheed extends Model {
     this.vehicleMesh = null;
     this.scale = 13;
     this.group = new THREE.Object3D();
+    //console.log("my game got sponsors");
   }
 
   init() {}

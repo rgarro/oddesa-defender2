@@ -3,7 +3,7 @@ var OBJLoader = require("three-obj-loader");
 
 class Model {
   constructor() {
-    this.Game;
+    this.Game = {};
     this.game_is_set = false;
     this.vehicleMesh = null;
   }
@@ -11,12 +11,12 @@ class Model {
   loadModel(modelUrl) {
     if (this.game_is_set) {
       //var loader = new THREE.JSONLoader();
-      /*OBJLoader(THREE);
+      OBJLoader(THREE);
       var loader = new THREE.OBJLoader();
       loader.load(modelUrl, function(obj) {
         console.log(typeof obj);
-      });*/
-      /*loader.load(
+      });
+      loader.load(
         modelUrl,
         function(model, materials) {
           var material = new THREE.MeshPhongMaterial();
@@ -29,7 +29,7 @@ class Model {
           //this.vehicleMesh.rotation.y = -360;
           this.postLoaded();
         }.bind(this)
-      );*/
+      );
     } else {
       throw new Error("Needs a Game parent object");
     }
