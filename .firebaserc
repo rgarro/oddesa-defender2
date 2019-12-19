@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "odessa-defender2",
+    "staging": "odessa-defender2"
+  }
+}
