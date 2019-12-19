@@ -32,6 +32,7 @@ class Lockheed extends Model {
     this.scale = 13;
     this.cruiseSpeed = 10;//Pixels Per Render time
     this.group = new THREE.Object3D();
+    //console.log("my game got sponsors");
   }
 
   postLoaded(){
