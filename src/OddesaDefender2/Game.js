@@ -4,7 +4,6 @@ import * as THREE from "three";
 import Lockheed from "./Lib/Lockheed"; //Ac130h
 
 const OrbitControls = require('three-orbitcontrols');
-
 class Game extends Component {
   constructor(props) {
     super(props);
@@ -35,6 +34,7 @@ class Game extends Component {
   }
 
   componentDidMount() {
+ console.log("component did mount...")   
     this.init();
     this.container.appendChild(this.Renderer.domElement);
     this.onRenderer();

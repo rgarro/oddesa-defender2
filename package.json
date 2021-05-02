@@ -9,7 +9,7 @@
     "react": "16.3.2",
     "react-dom": "16.3.2",
     "react-scripts": "^1.1.4",
-    "three": "0.94.0",
+    "three": "^0.128.0",
     "three-fbx-loader": "^1.0.3",
     "three-fbxloader-offical": "^1.0.0",
     "three-obj-loader": "1.1.3",
