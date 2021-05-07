@@ -20,7 +20,7 @@ class Lockheed extends Model {
   constructor() {
     super();
     this.meshName = "Spooky";
-    this.modelPath = "/Models/ac130anim.fbx";
+    this.modelPath = "/Models/AC130anim.fbx";
     this.vehicleTexture = "/Models/MainBody.png";
     //this.modelPath = "/Models/tupolev.fbx";
     //this.modelPath = "/Models/blackhawk.fbx";
@@ -36,7 +36,8 @@ class Lockheed extends Model {
   }
 
   postLoaded(){
-    this.vehicleMesh.rotation.y = 90;
+    console.log("post loaded ....");
+    //this.vehicleMesh.rotation.y = 90;
   }
 
   moveForward(){

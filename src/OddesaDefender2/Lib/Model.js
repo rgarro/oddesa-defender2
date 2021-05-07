@@ -14,12 +14,13 @@ class Model {
   }
 
   loadModel(modelUrl) {
- console.log(modelUrl);   
-    if (this.game_is_set) {
+    if (this.game_is_set) {  
       var loader = new FBXLoader();
       loader.load(modelUrl, function (object3d){
         this.vehicleObject = object3d;
-        var texture = new THREE.TextureLoader().load(this.vehicleTexture);
+  console.log("loading object callback");      
+ console.log(this.vehicleObject);       
+       var texture = new THREE.TextureLoader().load(this.vehicleTexture);
         var material = new THREE.MeshBasicMaterial({map:texture});
 
         this.vehicleGeometry = (this.vehicleObject.children[0]).geometry;
@@ -30,8 +31,10 @@ class Model {
        this.vehicleMesh.name = this.vehicleMeshName;
        this.Game.Scene.add(this.vehicleMesh);
         //this.vehicleObject.castShadow = true;
+        this.vehicleObject.material.customProgramCacheKey = () => {};
+        //this.vehicleObject.geometry.hasAttribute = () => {};
         //this.Game.Scene.add(this.vehicleObject);
-        console.log(this.vehicleMesh.position);
+        console.log("after added to scene");
         this.postLoaded();
       }.bind(this));
     } else {

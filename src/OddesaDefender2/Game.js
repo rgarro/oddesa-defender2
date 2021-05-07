@@ -130,6 +130,7 @@ class Game extends Component {
   }
 
   floorAndSky() {
+console.log("floor and sky");    
     this.floorTexture = new THREE.TextureLoader().load(this.floorTextureUrl);
   	this.floorTexture.wrapS = this.floorTexture.wrapT = THREE.RepeatWrapping;
   	this.floorTexture.repeat.set( 10, 10 );
