@@ -14,6 +14,7 @@ class Model {
   }
 
   loadModel(modelUrl) {
+ console.log(modelUrl);   
     if (this.game_is_set) {
       var loader = new FBXLoader();
       loader.load(modelUrl, function (object3d){

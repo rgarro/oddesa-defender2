@@ -78,7 +78,8 @@ class Game extends Component {
   }
 
   onPreRender() {
-    console.log("asdfffffff");
+    console.log("game pre render ..");
+    //super.onPreRender();
   }
 
   onRenderer() {
@@ -100,6 +101,7 @@ class Game extends Component {
   }
 
   loadPlane() {
+ console.log("loading airplane");   
     this.Ac130h.setParent(this);
     this.Ac130h.loadModel(this.Ac130h.modelPath);
     this.Ac130h.init();
